@@ -27,3 +27,16 @@ def test_parse_next_assembly_usage() -> None:
     first = relations[0]
     assert first.params[2] == 14  # parent product definition
     assert first.params[3] == 19  # child product definition
+
+
+def test_parse_complex_entity() -> None:
+    parser = StepParser()
+    content = "#205=(MASS_UNIT() NAMED_UNIT(*) SI_UNIT(.KILO.,.GRAM.));"
+    model = parser.parse(content)
+    entity = model.get(205)
+    assert entity is not None
+    assert entity.type == "MASS_UNIT"
+    assert entity.types == ("MASS_UNIT", "NAMED_UNIT", "SI_UNIT")
+    by_secondary = model.by_type("SI_UNIT")
+    assert len(by_secondary) == 1
+    assert by_secondary[0].entity_id == 205
