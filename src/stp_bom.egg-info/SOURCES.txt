@@ -1,0 +1,15 @@
+README.md
+pyproject.toml
+src/stp_bom/__init__.py
+src/stp_bom/bom.py
+src/stp_bom/cli.py
+src/stp_bom/parser.py
+src/stp_bom.egg-info/PKG-INFO
+src/stp_bom.egg-info/SOURCES.txt
+src/stp_bom.egg-info/dependency_links.txt
+src/stp_bom.egg-info/entry_points.txt
+src/stp_bom.egg-info/requires.txt
+src/stp_bom.egg-info/top_level.txt
+tests/test_bom.py
+tests/test_cli.py
+tests/test_parser.py

@@ -1,0 +1,2 @@
+[console_scripts]
+stp-bom = stp_bom.cli:main
